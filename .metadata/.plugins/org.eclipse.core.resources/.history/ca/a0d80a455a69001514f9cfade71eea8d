@@ -1,0 +1,10 @@
+package br.com.tecnonoticias.curso_jpa.main;
+
+public class AtualizandoPrimeiroObjeto {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

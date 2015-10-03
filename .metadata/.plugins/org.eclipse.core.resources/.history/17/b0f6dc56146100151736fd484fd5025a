@@ -1,0 +1,75 @@
+package br.com.tecnonoticias.ser;
+
+import java.util.Random;
+
+public class Ser {
+
+	public String nome;
+	public int linha;
+	public static int coluna;
+	public int vida;
+	public static int distancia;
+
+	public Ser(String nome) {
+
+		nome = nome;
+		linha = randomAparecer(300);
+		coluna = randomAparecer(300);
+		vida = 100;
+		distancia = 10;
+
+	}
+
+	public static Integer randomAparecer(Integer limite) {
+		Random random = new Random();		
+		Integer numero = random.nextInt(limite);
+
+		return numero;
+	}
+	
+	public static Integer random(Integer limite) {
+		Random random = new Random();		
+		Integer numero = random.nextInt(limite);
+
+		return numero;
+	}
+	
+	public Integer movendoL(Integer numero){
+		Integer x = linha+=random(numero)-1;
+			if(x==1){
+			return linha++;
+			}else if(x==-1){
+				return linha--;
+			}else{
+				return 0;
+			}
+		}
+	public Integer movendoC(Integer numero){
+		Integer x = linha+=random(numero)-1;
+		if(x==1){
+			return linha++;
+		}else if(x==-1){
+			return linha--;
+		}else{
+			return 0;
+		}
+	}
+
+	public void movimento() {
+			
+			if (linha <= 0) {
+				linha += distancia;
+			} else if (linha > 300) {
+				linha -= distancia;
+			}
+			if (coluna <= 0) {
+				coluna += distancia;
+			} else if (coluna >= 300) {
+				coluna -= distancia;
+			}
+	}
+	
+	public int morrer(int a, int vida2) {
+		return vida = vida2 - a;
+	}
+}
