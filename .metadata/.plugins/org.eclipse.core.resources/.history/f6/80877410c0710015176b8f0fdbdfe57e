@@ -1,0 +1,33 @@
+package br.com.tecnonoticias.cienciaDaComputacao3Semestre.main;
+
+import java.sql.SQLException;
+import java.util.Calendar;
+
+import br.com.tecnonoticias.cienciaDaComputacao3Semestre.dao.PessoaDao;
+import br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo.PessoaFisica;
+
+public class JdbcTeste {
+
+	public static void main(String[] args) throws SQLException {
+		Clientes tela = new Clientes();
+		// pronto para gravar
+		 PessoaFisica contato = new PessoaFisica();
+
+		 contato.setNome(tela.tf_Nome);
+		 contato.setCpf("029.022.099-98");
+		 contato.setEndereco("R. Vergueiro 3185 cj57");
+		 contato.setDataNascimento(Calendar.getInstance());
+
+		 // grave nessa conexão!!!
+		 PessoaDao dao = new PessoaDao();
+
+		 // método elegante
+		 dao.adiciona(contato);
+
+		 System.out.println("Gravado!");
+		
+//		Connection connection = new ConnectionFactory().getConnection();
+//		System.out.println("Conexão aberta!");
+//		connection.close();
+	}
+}

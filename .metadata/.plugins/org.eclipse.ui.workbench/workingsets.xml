@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1444360782780_1" label="persistencia-java" name="persistencia-java">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/persistencia-java-master" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/persistencia-java-aula01" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/persistencia-java-aula02" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/persistencia-java-aula03" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/persistencia-java-aula04" type="4"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1442842811618_0" label="Window Working Set" name="Aggregate for window 1442842811617"/>
 </workingSetManager>

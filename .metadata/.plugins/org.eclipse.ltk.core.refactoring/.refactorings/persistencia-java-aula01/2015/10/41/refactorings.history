@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ConnectionFactory.java&apos; to &apos;cadastroCervejaria/src/main/java/br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo&apos;&#x0A;- Original project: &apos;persistencia-java-aula01&apos;&#x0A;- Destination element: &apos;cadastroCervejaria/src/main/java/br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo&apos;&#x0A;- Original element: &apos;br.edu.fcv.exemplo.ConnectionFactory.java&apos;" description="Copy compilation unit" destination="=cadastroCervejaria/src\/main\/java&lt;br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo" element1="/src\/main\/java&lt;br.edu.fcv.exemplo{ConnectionFactory.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1444388016299" units="1" version="1.0"/>
+</session>

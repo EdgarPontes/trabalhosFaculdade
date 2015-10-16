@@ -1,0 +1,44 @@
+package br.com.tecnonoticias.exemplo;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class MenusCaelun {
+
+	private JFrame janela;
+
+	// main e montaTela
+
+	public static void main(String[] args) {
+	     new MenusCaelun().montaTela();
+	   }
+	
+	public void montaTela() {
+		  mostraJanela();
+		  preparaPainelPrincipal();
+		  preparaBotaoSair();
+		  preparaBotaoSair();
+		  mostraJanela();
+		}
+
+	private void preparaPainelPrincipal() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void preparaBotaoSair() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void mostraJanela() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

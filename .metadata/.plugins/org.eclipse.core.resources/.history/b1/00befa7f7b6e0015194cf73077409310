@@ -1,0 +1,10 @@
+package br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo;
+
+import java.util.Date;
+
+public class PessoaFisica extends Pessoa{
+
+	private String nome;
+	private Date idade;
+	private String sexo;
+}

@@ -1,0 +1,40 @@
+package br.com.tecnonoticias.cienciaDaComputacao3Semestre.main;
+
+import java.io.ObjectInputStream.GetField;
+import java.util.Calendar;
+import java.util.List;
+
+import br.com.tecnonoticias.cienciaDaComputacao3Semestre.dao.PessoaDao;
+import br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo.Pessoa;
+import br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo.PessoaFisica;
+
+public class JdbcTesteAltera {
+
+	public static void main(String[] args) {
+		
+		PessoaDao dao = new PessoaDao();
+		
+		List<PessoaFisica> pessoas = dao.busca();
+
+		for (PessoaFisica contato : pessoas) {
+//			  System.out.println("Id: " + pessoa.getPessoaId());
+//			  System.out.println("Nome: " + pessoa.getNome()+ "\n");
+//			
+//		
+		// pronto para gravar
+//				 PessoaFisica contato = new PessoaFisica();
+
+				 contato.setNome("Edgar");
+				 contato.setCpf("029.022.099-98");
+				 contato.setEndereco("R. Nove, 47");
+				 contato.setDataNascimento(Calendar.getInstance());
+				 contato = get(1);
+
+				 // grave nessa conexão!!!
+				 dao.altera(contato);
+
+				 System.out.println("Alterado!");
+		}
+	}
+
+}

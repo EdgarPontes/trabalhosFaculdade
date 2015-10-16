@@ -1,0 +1,9 @@
+package br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo;
+
+public class Funcionario extends PessoaFisica{
+	
+	private long funcionarioId;
+	private String usuario;
+	private String senha;
+
+}

@@ -1,0 +1,11 @@
+package br.com.tecnonoticias.cienciaDaComputacao3Semestre.main;
+
+public class JdbcTesteAltera {
+
+	public static void main(String[] args) {
+		
+		
+		
+	}
+
+}

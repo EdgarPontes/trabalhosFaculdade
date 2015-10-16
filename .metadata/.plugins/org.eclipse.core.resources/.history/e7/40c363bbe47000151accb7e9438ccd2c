@@ -1,0 +1,92 @@
+package br.com.tecnonoticias.exemplo;
+
+import java.awt.AWTEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class MenusCaelun {
+
+	private JFrame janela;
+	private JPanel painelPrincipal;
+
+	public static void main(String[] args) {
+
+		new MenusCaelun().montaTela();
+
+	}
+
+	private void montaTela() {
+		preparaJanela();
+		preparaPainelPrincipal();
+		preparaBotaoCarregar();
+		preparaBotaoSair();
+		mostraJanea();
+	}
+
+	private void preparaJanela() {
+		janela = new JFrame("Cadrastro");
+		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	private void preparaPainelPrincipal() {
+		painelPrincipal = new JPanel();
+		janela.add(painelPrincipal);
+
+	}
+
+	private void preparaBotaoCarregar() {
+		JButton botaoCarregar = new JButton("Carregar XML");
+		botaoCarregar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new EscolhedorDeXML().escolhe();
+			}
+		});
+		painelPrincipal.add(botaoCarregar);
+	}
+
+	private void preparaBotaoSair() {
+		JButton botaoSair = new JButton("Sair");
+		
+		//ActionListener
+        botaoSair.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                buttonAction(e);
+            }
+        });
+        //KeyListener para o Frame
+        botaoSair.addKeyListener(new KeyListener() {
+            //Quando soltar a tecla
+            public void keyReleased(KeyEvent e) {
+                //Se a tecla pressionada for igual a F2
+                if (e.getKeyCode() == KeyEvent.VK_ALT ) 
+                    buttonAction(e);
+            }
+            public void keyTyped(KeyEvent e) {}
+            public void keyPressed(KeyEvent e) {}
+        });
+		painelPrincipal.add(botaoSair);
+	}
+	private void buttonAction(AWTEvent e) {
+        if (e instanceof KeyEvent) {
+           System.exit(0);;
+        }
+        else if (e instanceof ActionEvent) {
+            System.exit(0);;
+        }
+    }
+
+
+	private void mostraJanea() {
+		janela.pack();
+		janela.setSize(540, 540);
+		janela.setVisible(true);
+
+	}
+}

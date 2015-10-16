@@ -1,0 +1,10 @@
+package br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo;
+
+public class JdbcTeste {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

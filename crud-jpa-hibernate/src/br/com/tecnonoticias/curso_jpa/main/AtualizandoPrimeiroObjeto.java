@@ -15,8 +15,8 @@ public class AtualizandoPrimeiroObjeto {
 		Cliente cliente = em.find(Cliente.class, 1L);
 		
 		em.getTransaction().begin();
-		cliente.setNome("Edgar");
-		cliente.setIdade(36);
+		cliente.setNome("Eder");
+		cliente.setIdade(34);
 		em.getTransaction().commit();
 
 		System.out.println("Cliente atualizado com sucesso! ");

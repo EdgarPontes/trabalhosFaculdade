@@ -1,0 +1,94 @@
+package br.com.tecnonoticias.exemplo;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.WindowConstants;
+
+import com.birosoft.liquid.LiquidLookAndFeel;
+
+@SuppressWarnings("serial")
+public class Jmenus extends JFrame {
+
+	private JMenuBar BarraMenu = null;
+	private JMenu mnuArquivo = null;
+	private JMenuItem mnuSair = null;
+
+	public Jmenus() {
+		super();
+		initialize();
+	}
+	
+	/**
+	 * Metodo para chamar o lookandfell, tem que ser antes do contrutor da tela.
+	 */
+	public static void lookandfeel(){
+		try {
+			/**
+			 * "com.birosoft.liquid.LiquidLookAndFeel" tema mac
+			 * "com.jtattoo.plaf.aero.AeroLookAndFeel" tema aero
+			 * "com.jtattoo.plaf.hifi.HiFiLookAndFeel" black
+			 * "com.jtattoo.plaf.acryl.AcrylLookAndFeel" tema acryl
+			 * "com.jtattoo.plaf.mcwin.McWinLookAndFeel" tema mcWin
+			 * "com.jtattoo.plaf.smart.SmartLookAndFeel" tema smart
+			 */
+            UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
+            LiquidLookAndFeel.setLiquidDecorations(true, "mac");
+//            new SUACLASSE();
+ 
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+	}
+
+	private void initialize() {
+  
+		this.setTitle("Aplicação com menu");
+		this.setJMenuBar(getBarraMenu());
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		this.setSize(800, 600);
+		this.setVisible(true);
+		
+	}
+	
+	private JMenuBar getBarraMenu() {
+		if (BarraMenu == null) {
+			BarraMenu = new JMenuBar();
+			BarraMenu.add(getMnuArquivo());
+		}
+		return BarraMenu;
+	}
+
+	private JMenu getMnuArquivo() {
+		if (mnuArquivo == null) {
+			mnuArquivo = new JMenu();
+			mnuArquivo.setText("Arquivo");
+			mnuArquivo.add(getMnuSair());
+		}
+		return mnuArquivo;
+	}
+
+	private JMenuItem getMnuSair() {
+		if (mnuSair == null) {
+			mnuSair = new JMenuItem();
+			mnuSair.setText("Sair");
+		}
+		return mnuSair;
+	}
+
+	public static void main(String[] args) {
+ 
+		lookandfeel();
+		new Jmenus();
+	}
+
+}

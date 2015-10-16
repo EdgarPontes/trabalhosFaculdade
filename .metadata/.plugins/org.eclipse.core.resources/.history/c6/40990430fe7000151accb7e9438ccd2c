@@ -1,0 +1,29 @@
+package br.com.tecnonoticias.exemplo;
+
+import java.util.List;
+
+public class NegociosTableModel {
+
+	private final List<Negocio> lista;
+	// ctrl + 3 constructor
+	
+	public int getRowCount() {
+		
+		return lista.size();
+	}
+	public int getColumnCount() {
+		return 3;
+	}
+	public Object getValueAt(int linha, int coluna) {
+		Negocio negocio = lista.get(linha);
+		switch (coluna) {
+		case 0:
+			return negocio.getPreco();
+		case 1:
+			return negocio.getQuantidade();
+		case 2:
+			return negocio.getData();
+		}
+		return "";
+	}
+}

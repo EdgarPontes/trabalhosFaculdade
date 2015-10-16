@@ -1,6 +1,0 @@
-package br.com.tecnonoticias.ser;
-
-public class Snippet {
-	Icon goku = new ImageIcon("/media/edgar/VICTOR/WorkspaceNew/Swing/imagens/GokuBd.png");
-}
-

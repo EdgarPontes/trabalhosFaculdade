@@ -2,6 +2,7 @@ package faculdade;
 
 public class Computador extends Equipamento {
 
+	@SuppressWarnings("unused")
 	@Override
 	public String ligar() {
 		super.desligar();

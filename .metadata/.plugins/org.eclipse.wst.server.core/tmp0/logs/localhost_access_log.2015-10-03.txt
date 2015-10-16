@@ -1,0 +1,11 @@
+127.0.0.1 - - [03/Oct/2015:18:19:32 -0300] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [03/Oct/2015:19:04:14 -0300] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [03/Oct/2015:19:07:18 -0300] "GET /primeiro-projeto-jsf/OlaJSF.xhtml HTTP/1.1" 200 2206
+127.0.0.1 - - [03/Oct/2015:19:07:18 -0300] "GET /primeiro-projeto-jsf/javax.faces.resource/jquery/jquery.js.xhtml;jsessionid=A5DAF8A3005F4BEF87A36CCABE946F21?ln=primefaces HTTP/1.1" 200 105210
+127.0.0.1 - - [03/Oct/2015:19:07:18 -0300] "GET /primeiro-projeto-jsf/javax.faces.resource/primefaces.js.xhtml;jsessionid=A5DAF8A3005F4BEF87A36CCABE946F21?ln=primefaces HTTP/1.1" 200 233831
+127.0.0.1 - - [03/Oct/2015:19:07:18 -0300] "GET /primeiro-projeto-jsf/javax.faces.resource/primefaces.css.xhtml;jsessionid=A5DAF8A3005F4BEF87A36CCABE946F21?ln=primefaces HTTP/1.1" 200 50669
+127.0.0.1 - - [03/Oct/2015:19:07:18 -0300] "GET /primeiro-projeto-jsf/javax.faces.resource/theme.css.xhtml?ln=primefaces-aristo HTTP/1.1" 200 28299
+127.0.0.1 - - [03/Oct/2015:19:07:18 -0300] "GET /favicon.ico HTTP/1.1" 404 1016
+127.0.0.1 - - [03/Oct/2015:19:07:19 -0300] "GET /favicon.ico HTTP/1.1" 404 1016
+127.0.0.1 - - [03/Oct/2015:19:07:22 -0300] "POST /primeiro-projeto-jsf/OlaJSF.xhtml;jsessionid=A5DAF8A3005F4BEF87A36CCABE946F21 HTTP/1.1" 200 1268
+127.0.0.1 - - [03/Oct/2015:19:07:28 -0300] "POST /primeiro-projeto-jsf/OlaJSF.xhtml HTTP/1.1" 200 1268

@@ -1,0 +1,12 @@
+package br.com.tecnonoticias.exemplo;
+
+public final class Candlestick {
+
+	private final double abertura;
+	  private final double fechamento;
+	  private final double minimo;
+	  private final double maximo;
+	  private final double volume;
+	  private final Calendar data;
+	  
+}
