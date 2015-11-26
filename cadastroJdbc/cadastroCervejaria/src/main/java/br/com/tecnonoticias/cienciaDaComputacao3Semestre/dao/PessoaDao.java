@@ -27,7 +27,7 @@ public class PessoaDao {
 	 */
 	public void adiciona(PessoaFisica contato) {
 
-	     String sql = "insert into Pessoa " + "(nome,cpf,rg,sexo,endereco,cidade,estado,dataNascimento)" + " values (?,?,?,?,?,?,?,?)";
+	     String sql = "insert into Pessoa " + "(nome,cpf,rg,sexo,endereco,cidade,estado)" + " values (?,?,?,?,?,?,?)";
 	     try {
 	        /**
 	         * Prepara o statement para inserção 
@@ -44,7 +44,7 @@ public class PessoaDao {
 	         stmt.setString(5,contato.getEndereco());
 	         stmt.setString(6,contato.getCidade());
 	         stmt.setString(7,contato.getEstado());
-	         stmt.setDate(8, new Date(contato.getDataNascimento().getTimeInMillis()));
+//	         stmt.setDate(8, new Date(contato.getDataNascimento().getTimeInMillis()));
 	         
 	       /**
 	        * Executa a operação 
@@ -86,9 +86,9 @@ public class PessoaDao {
 	             /**
 	              * Montando a data através do Calendar
 	              */
-	             Calendar data = Calendar.getInstance();
-	             data.setTime(rs.getDate("dataNascimento"));
-	             contato.setDataNascimento(data);
+//	             Calendar data = Calendar.getInstance();
+//	             data.setTime(rs.getDate("dataNascimento"));
+//	             contato.setDataNascimento(data);
 
 	           /**
 	            * Adicionando o objeto à lista
@@ -112,7 +112,7 @@ public class PessoaDao {
 	 */
 	public void altera(PessoaFisica contato) {
 
-	     String sql = "update Pessoa set nome=?, cpf=?, rg=?, sexo=?, endereco=?, cidade=?, estado=?, dataNascimento=? where pessoaId=?";
+	     String sql = "update Pessoa set nome=?, cpf=?, rg=?, sexo=?, endereco=?, cidade=?, estado=? where pessoaId=?";
 	     try {
 
 	         PreparedStatement stmt = connection.prepareStatement(sql);
@@ -123,8 +123,7 @@ public class PessoaDao {
 	         stmt.setString(5,contato.getEndereco());
 	         stmt.setString(6,contato.getCidade());
 	         stmt.setString(7,contato.getEstado());
-	         stmt.setDate(8, new Date(contato.getDataNascimento().getTimeInMillis()));
-	         stmt.setLong(9, contato.getPessoaId());
+	         stmt.setLong(8, contato.getPessoaId());
 	         stmt.executeUpdate();
 	         stmt.close();
 

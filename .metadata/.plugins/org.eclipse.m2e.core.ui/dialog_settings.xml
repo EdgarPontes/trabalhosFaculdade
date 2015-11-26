@@ -1,20 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="org.eclipse.m2e.core.pom.dependencies">
+	<section name="MavenProjectWizardArchetypePage">
+		<item value="internal" key="catalog"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
 	</section>
 	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="issueManagementUrl">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
 		<list key="ciManagementUrl">
 		</list>
 		<list key="ciManagementSystem">
 		</list>
-		<list key="issueManagementSystem">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.wizards.CustomArchetypeDialog">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="/media/edgar/VICTOR/WorkspaceNew/EstruturaDeDados/src"/>
+			<item value="/media/edgar/VICTOR/WorkspaceNew/cadastroJdbc/cadastroCervejaria/src/main/java/br/com/tecnonoticias/cienciaDaComputacao3Semestre/main/Login.java"/>
+			<item value="/media/edgar/VICTOR/WorkspaceNew/locadora-veiculo-web"/>
+			<item value="/media/edgar/VICTOR/WorkspaceNew/EstruturaDeDados/src/br/com/tecnonoticias/estruturadedados/blackjack"/>
 		</list>
-		<list key="issueManagementUrl">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="450" key="height"/>
+		<item value="480" key="width"/>
+		<item value="110" key="y"/>
+		<item value="475" key="x"/>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="groupId">
+			<item value="br.com.tecnonoticias.estruturadedados"/>
+		</list>
+		<list key="package">
+			<item value="br.com.tecnonoticias.estruturadedados.TrabalhoEstruturaDeDados"/>
+			<item value="br.com.tecnonoticias.estruturadedados.Chat"/>
+			<item value="br.com.tecnonoticias.estruturadedados.vinteUm"/>
+			<item value="br.com.tecnonoticias.estruturadedados.pilhas"/>
+			<item value="br.com.tecnonoticias.estruturadedados.pilha"/>
+		</list>
+		<list key="artifactId">
+			<item value="TrabalhoEstruturaDeDados"/>
+			<item value="Chat"/>
+			<item value="vinteUm"/>
+			<item value="pilhas"/>
+			<item value="pilha"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.preferences.LocalArchetypeCatalogDialog">
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/media/edgar/VICTOR/WorkspaceNew/sistema-venda-maven-master"/>
 			<item value="/media/edgar/VICTOR/WorkspaceNew/persistencia-java-master"/>
+			<item value="/media/edgar/VICTOR/WorkspaceNew/persistencia-java-master/aula05"/>
 			<item value="/media/edgar/VICTOR/WorkspaceNew/locadora-veiculo-web"/>
 			<item value="/media/edgar/VICTOR/WorkspaceNew/locadora-veiculo-web/src/main/java"/>
 			<item value="/media/edgar/VICTOR/WorkspaceNew/primeiro-projeto-jsf"/>
@@ -26,6 +95,25 @@
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
 			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
 </section>

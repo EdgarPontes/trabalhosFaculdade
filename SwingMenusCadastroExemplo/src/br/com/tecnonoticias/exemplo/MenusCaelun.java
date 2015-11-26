@@ -9,6 +9,7 @@ import java.awt.event.KeyListener;
 import java.util.List;
 import java.util.Locale;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -69,6 +70,7 @@ public class MenusCaelun {
 	}
 
 	private void preparaPainelPrincipal() {
+		
 		painelPrincipal = new JPanel();
 		janela.add(painelPrincipal);
 

@@ -8,6 +8,7 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -87,13 +88,14 @@ public class Clientes extends JFrame {
 		
 		bt_salvar.addActionListener(new ActionListener() {
 			
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				salvar();				
 			}
 			private void salvar() {
 				PessoaFisica contato = new PessoaFisica();
-
+				if(tf_Nome.getText().equals("")){
+					JOptionPane.showMessageDialog(null, "Campos obrigatorios não preenchidos.");
+				}else{
 				 contato.setNome(tf_Nome.getText());
 				 contato.setCpf(tf_Cpf.getText());
 				 contato.setRg(tf_Rg.getText());
@@ -108,21 +110,20 @@ public class Clientes extends JFrame {
 
 				 // método elegante
 				 dao.adiciona(contato);
-
-				 System.out.println("Gravado!");
-				
+				 
+				 JOptionPane.showMessageDialog(null, "Cliente gravado com sucesso!");
+				}
 			}
 		});
-		bt_consultar.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				new JdbcTesteBusca();
-			}
-
-		});
+//		bt_consultar.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				new JdbcTesteBusca();
+//			}
+//
+//		});
 		bt_fechar.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				Clientes.this.dispose();
 			}
@@ -150,7 +151,7 @@ public class Clientes extends JFrame {
 		
 		getContentPane().add(bt_salvar);
 		getContentPane().add(bt_fechar);
-		getContentPane().add(bt_consultar);
+//		getContentPane().add(bt_consultar);
 
 	}
 

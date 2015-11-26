@@ -21,8 +21,9 @@ public class Tela {
 
 	private JFrame janela;
 	private JPanel painelPrincipal;
+	private boolean entrar = true;
 
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		/**
 		 * Setar o local padráo do aplicativo.
 		 */
@@ -59,7 +60,7 @@ public class Tela {
 	private void preparaJanela() {
 		janela = new JFrame("Cadrastro");
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		janela.setBounds(270, 200, 475, 350);
+		janela.setBounds(400, 100, 530, 490);
 		
 	}
 	/**
@@ -87,7 +88,6 @@ public class Tela {
 		JButton botaoCadastroInclui = new JButton("Cadastro Clientes");
 		botaoCadastroInclui.setBounds(20, 80, 200, 50);
 		botaoCadastroInclui.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				new Clientes().setVisible(true);
 			}
@@ -101,7 +101,6 @@ public class Tela {
 		JButton botaoCadastroAltera = new JButton("Alterar Clientes");
 		botaoCadastroAltera.setBounds(20, 150, 200, 50);
 		botaoCadastroAltera.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 //				new Clientes().setVisible(true);
 				JOptionPane.showMessageDialog(null, "Tela em construção!");
@@ -116,10 +115,8 @@ public class Tela {
 		JButton botaoCadastroConsulta = new JButton("Consulta Clientes");
 		botaoCadastroConsulta.setBounds(20, 220, 200, 50);
 		botaoCadastroConsulta.addActionListener(new ActionListener() {
-			@SuppressWarnings("static-access")
-			@Override
 			public void actionPerformed(ActionEvent e) {
-				new JdbcTesteBusca().montaTela();
+				new JdbcTesteBusca();
 			}
 		});
 		painelPrincipal.add(botaoCadastroConsulta);
@@ -131,7 +128,6 @@ public class Tela {
 		JButton botaoCadastroExclui = new JButton("Exclui Clientes");
 		botaoCadastroExclui.setBounds(20, 290, 200, 50);
 		botaoCadastroExclui.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 //				new Clientes().setVisible(true);
 				JOptionPane.showMessageDialog(null, "Tela em construção!");
@@ -146,7 +142,6 @@ public class Tela {
 		JButton botaoSair = new JButton("Sair");
 		botaoSair.setBounds(20, 400, 200, 50);
 		botaoSair.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
@@ -160,7 +155,7 @@ public class Tela {
 	private void mostraJanea() {
 		janela.pack();
 		janela.setSize(540, 540);
-		janela.setVisible(true);
+		janela.setVisible(entrar);
 
 	}
 	/**
@@ -176,7 +171,7 @@ public class Tela {
 			 * "com.jtattoo.plaf.mcwin.McWinLookAndFeel" tema mcWin
 			 * "com.jtattoo.plaf.smart.SmartLookAndFeel" tema smart
 			 */
-			UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
+			UIManager.setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
 			LiquidLookAndFeel.setLiquidDecorations(true, "mac");
 
 		} catch (ClassNotFoundException e) {

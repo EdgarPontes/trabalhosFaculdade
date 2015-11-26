@@ -6,7 +6,8 @@ import javax.swing.table.AbstractTableModel;
 @SuppressWarnings("serial")
 public class modeloTableMode extends AbstractTableModel {
 
-	private final List<PessoaFisica> lista;
+	private List<PessoaFisica> lista;
+	private List<String[]> linhas;
 
 	// ctrl + 3 constructor
 	public modeloTableMode(List<PessoaFisica> lista) {
@@ -14,17 +15,18 @@ public class modeloTableMode extends AbstractTableModel {
 		this.lista = lista;
 	}
 
-	@Override
 	public int getRowCount() {
 		return lista.size();
 	}
 
-	@Override
 	public int getColumnCount() {
 		return 8;
 	}
+	
+//	public Class getColumnClass(int col) {
+//		return getValueAt(0, col).getClass();
+//	}
 
-	@Override
 	public Object getValueAt(int linha, int coluna) {
 		PessoaFisica pessoa = lista.get(linha);
 		switch (coluna) {
@@ -74,4 +76,29 @@ public class modeloTableMode extends AbstractTableModel {
 		}
 		return "";
 	}
+
+	public boolean isCellEditable(int rowIndex, int columnIndex) {
+		if (columnIndex == 0) {  
+		      return false;  
+		    }  
+		// Indicamos se a célula da rowIndex e da columnIndex é editável. 
+		return false;
+	}
+	
+	public void setValueAt(List<PessoaFisica> aValue, int row, int column) {
+		lista = aValue;
+	}
+
+	public PessoaFisica get(int row) {
+		return lista.get(row);
+	}
+	public List<String[]> getLinhas() {  
+        return linhas;  
+    }  
+	public void addRow(String[] dadosLinhas) {  
+        getLinhas().add(dadosLinhas);  
+        int linha = getLinhas().size()-1;  
+        fireTableRowsInserted(linha, linha);  
+        return;  
+    }  
 }

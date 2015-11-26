@@ -11,9 +11,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.TableModel;
 
 import com.birosoft.liquid.LiquidLookAndFeel;
 
@@ -21,80 +27,146 @@ import br.com.tecnonoticias.cienciaDaComputacao3Semestre.dao.PessoaDao;
 import br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo.PessoaFisica;
 import br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo.modeloTableMode;
 
-public class JdbcTesteBusca {
+@SuppressWarnings("serial")
+public class JdbcTesteBusca extends JFrame {
 	
+	public JdbcTesteBusca(){
+		montaTela();
+		ListSelectionModel listMod = tabela.getSelectionModel();
+		listMod.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		listMod.addListSelectionListener(new Selecao(tabela));
+	}
 	private static JFrame janela;
 	private static JPanel painelPrincipal;
 	private static JTable tabela;
 	
-	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		Locale.setDefault(new Locale("pt", "BR"));
-		lookandfeel();
-		new JdbcTesteBusca().montaTela();
+//		lookandfeel();
+		new JdbcTesteBusca();
 
 	}
 	public static void montaTela() {
 		preparaJanela();
 		preparaPainelPrincipal();
-//		preparaTitulo();
+		mostraJanea();
 		preparaTabela();
 		preparaBotaoCarregar();
-//		preparaBotaoSair();
-		mostraJanea();
+		preparaBotaoAlterar();
+		preparaBotaoSair();
 	}
 
-	private static void preparaTabela() {
-		tabela = new JTable();
-		tabela.setBorder(new LineBorder(Color.black));
-		tabela.setGridColor(Color.black);
-		tabela.setShowGrid(true);
-		JScrollPane scroll = new JScrollPane();
-		scroll.getViewport().setBorder(null);
-		scroll.setSize(450, 450);
-		scroll.getViewport().add(tabela);
-		painelPrincipal.add(scroll);
-	}
 	private static void preparaJanela() {
 		janela = new JFrame("Consulta");
-		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		janela.setLocation(400, 100);
+		janela.setLayout(null);
+		
 	}
 	private static void preparaPainelPrincipal() {
 		painelPrincipal = new JPanel();
+		painelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
+		painelPrincipal.setBounds(10, 10, 500, 450);
 		janela.add(painelPrincipal);
 	}
 	private static void mostraJanea() {
 		janela.pack();
-		janela.setSize(640, 500);
+		janela.setSize(530, 490);
+		janela.setResizable(false);
 		janela.setVisible(true);
 
 	}
+	private static void preparaTabela() {
+		tabela = new JTable();
+		tabela.setBorder(new LineBorder(Color.red));
+		tabela.setGridColor(Color.blue);
+		tabela.setShowGrid(true);
+		JScrollPane scroll = new JScrollPane();
+		scroll.getViewport().setBorder(null);
+		scroll.setSize(500, 200); //Mudar tamanho da JTable.
+
+		scroll.getViewport().add(tabela);
+		painelPrincipal.add(scroll);
+	}
 	private static void preparaBotaoCarregar() {
 		JButton botaoCarregar = new JButton("Consultar");
+		botaoCarregar.setBounds(40, 410, 110, 30);
 		botaoCarregar.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				PessoaDao dao = new PessoaDao();
 				List<PessoaFisica> pessoas = dao.busca();
 				modeloTableMode ntm = new modeloTableMode(pessoas);
 				tabela.setModel(ntm);
-				};
+				tabela.getColumnModel().getColumn(0).setPreferredWidth(30);
+				tabela.getColumnModel().getColumn(1).setPreferredWidth(260);
+				tabela.getColumnModel().getColumn(2).setPreferredWidth(260);
+				tabela.getColumnModel().getColumn(3).setPreferredWidth(260);
+				tabela.getColumnModel().getColumn(4).setPreferredWidth(120);
+				tabela.getColumnModel().getColumn(5).setPreferredWidth(260);
+				tabela.getColumnModel().getColumn(6).setPreferredWidth(200);
+				tabela.getColumnModel().getColumn(7).setPreferredWidth(200);
+			};
 		});
+		
 		painelPrincipal.add(botaoCarregar);
+	}	
+	
+	public static void preparaBotaoAlterar(){
+		JButton botaoAlterar = new JButton("Alterar");
+		botaoAlterar.setBounds(185, 410, 110, 30);
+		botaoAlterar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new JdbcTesteAltera().setVisible(true);
+				
+			}
+		});
+		painelPrincipal.add(botaoAlterar);
+	}
+	public static void preparaBotaoSair() {
+		JButton botaoSair = new JButton("Sair");
+		botaoSair.setBounds(355, 410, 110, 30);
+		botaoSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				janela.dispose();
+			}
+		});
+
+		painelPrincipal.add(botaoSair);
 	}
 	
-//	public static void preparaBotaoSair() {
-//		JButton botaoSair = new JButton("Sair");
-//		botaoSair.setBounds(20, 400, 200, 50);
-//		botaoSair.addActionListener(new ActionListener() {
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				JdbcTesteBusca.this.
-//			}
-//		});
-//
-//		painelPrincipal.add(botaoSair);
-//	}
+	class Selecao implements ListSelectionListener {
+
+		private JTable tabela;
+
+		public Selecao(JTable tb) {
+			this.tabela = tb;
+		}
+
+		public void valueChanged(ListSelectionEvent e) {
+			int[] selRows;
+			JdbcTesteAltera altera = new JdbcTesteAltera();
+			
+			if (!e.getValueIsAdjusting()) {
+				selRows = tabela.getSelectedRows();
+
+				if (selRows.length > 0) {
+						TableModel tm = tabela.getModel();
+						altera.tf_Codigo.setText(tm.getValueAt(selRows[0], 0).toString());
+						altera.tf_Nome.setText(tm.getValueAt(selRows[0], 1).toString());
+						altera.tf_Cpf.setText(tm.getValueAt(selRows[0], 2).toString());
+						altera.tf_Rg.setText(tm.getValueAt(selRows[0], 3).toString());
+						altera.tf_Sexo.setText(tm.getValueAt(selRows[0], 4).toString());
+						altera.tf_Endereco.setText(tm.getValueAt(selRows[0], 5).toString());
+						altera.tf_Cidade.setText(tm.getValueAt(selRows[0], 6).toString());
+						altera.tf_Estado.setText(tm.getValueAt(selRows[0], 7).toString());
+						altera.setVisible(true);
+
+					System.out.println();
+				}
+			}
+		}
+	}
+
 	public static void lookandfeel() {
 		try {
 			/**
@@ -118,4 +190,5 @@ public class JdbcTesteBusca {
 			e.printStackTrace();
 		}
 	}
+
 }
