@@ -72,7 +72,6 @@ public class JdbcTesteBusca {
 	private static void preparaBotaoCarregar() {
 		JButton botaoCarregar = new JButton("Consultar");
 		botaoCarregar.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				PessoaDao dao = new PessoaDao();
 				List<PessoaFisica> pessoas = dao.busca();

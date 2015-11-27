@@ -14,17 +14,14 @@ public class modeloTableMode extends AbstractTableModel {
 		this.lista = lista;
 	}
 
-	@Override
 	public int getRowCount() {
 		return lista.size();
 	}
 
-	@Override
 	public int getColumnCount() {
 		return 8;
 	}
 
-	@Override
 	public Object getValueAt(int linha, int coluna) {
 		PessoaFisica pessoa = lista.get(linha);
 		switch (coluna) {

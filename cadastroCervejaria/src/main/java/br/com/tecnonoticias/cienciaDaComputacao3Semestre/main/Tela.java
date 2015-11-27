@@ -87,7 +87,6 @@ public class Tela {
 		JButton botaoCadastroInclui = new JButton("Cadastro Clientes");
 		botaoCadastroInclui.setBounds(20, 80, 200, 50);
 		botaoCadastroInclui.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				new Clientes().setVisible(true);
 			}
@@ -101,7 +100,6 @@ public class Tela {
 		JButton botaoCadastroAltera = new JButton("Alterar Clientes");
 		botaoCadastroAltera.setBounds(20, 150, 200, 50);
 		botaoCadastroAltera.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 //				new Clientes().setVisible(true);
 				JOptionPane.showMessageDialog(null, "Tela em construção!");
@@ -117,7 +115,6 @@ public class Tela {
 		botaoCadastroConsulta.setBounds(20, 220, 200, 50);
 		botaoCadastroConsulta.addActionListener(new ActionListener() {
 			@SuppressWarnings("static-access")
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				new JdbcTesteBusca().montaTela();
 			}
@@ -131,7 +128,6 @@ public class Tela {
 		JButton botaoCadastroExclui = new JButton("Exclui Clientes");
 		botaoCadastroExclui.setBounds(20, 290, 200, 50);
 		botaoCadastroExclui.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 //				new Clientes().setVisible(true);
 				JOptionPane.showMessageDialog(null, "Tela em construção!");
@@ -146,7 +142,6 @@ public class Tela {
 		JButton botaoSair = new JButton("Sair");
 		botaoSair.setBounds(20, 400, 200, 50);
 		botaoSair.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
@@ -176,7 +171,7 @@ public class Tela {
 			 * "com.jtattoo.plaf.mcwin.McWinLookAndFeel" tema mcWin
 			 * "com.jtattoo.plaf.smart.SmartLookAndFeel" tema smart
 			 */
-			UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
+			UIManager.setLookAndFeel("com.jtattoo.plaf.aero.AeroLookAndFeel");
 			LiquidLookAndFeel.setLiquidDecorations(true, "mac");
 
 		} catch (ClassNotFoundException e) {

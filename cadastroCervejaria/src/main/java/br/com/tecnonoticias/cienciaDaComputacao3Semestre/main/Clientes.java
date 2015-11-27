@@ -3,7 +3,6 @@ package br.com.tecnonoticias.cienciaDaComputacao3Semestre.main;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
-import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -87,7 +86,6 @@ public class Clientes extends JFrame {
 		
 		bt_salvar.addActionListener(new ActionListener() {
 			
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				salvar();				
 			}
@@ -115,14 +113,12 @@ public class Clientes extends JFrame {
 		});
 		bt_consultar.addActionListener(new ActionListener() {
 			
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				new JdbcTesteBusca();
 			}
 
 		});
 		bt_fechar.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				Clientes.this.dispose();
 			}
