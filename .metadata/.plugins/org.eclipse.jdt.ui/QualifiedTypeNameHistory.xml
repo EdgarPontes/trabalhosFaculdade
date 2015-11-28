@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.swing.JMenuItem"/>
-<fullyQualifiedTypeName name="br.com.tecnonoticias.cienciaDaComputacao3Semestre.main.JdbcTesteBusca"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.PrintStream"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.net.ServerSocket"/>
@@ -41,23 +38,26 @@
 <fullyQualifiedTypeName name="java.awt.Toolkit"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
 <fullyQualifiedTypeName name="javax.swing.JButton"/>
-<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="javax.swing.SwingUtilities"/>
 <fullyQualifiedTypeName name="br.com.tecnonoticias.estruturadedados.vinteUm.PilhaComandos"/>
 <fullyQualifiedTypeName name="br.com.tecnonoticias.estruturadedados.vinteUm.Icones"/>
 <fullyQualifiedTypeName name="javax.swing.JDialog"/>
 <fullyQualifiedTypeName name="br.com.tecnonoticias.estruturadedados.vinteUm.Baralho"/>
-<fullyQualifiedTypeName name="javax.swing.JTextField"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="java.awt.Frame"/>
-<fullyQualifiedTypeName name="br.com.tecnonoticias.estruturadedados.vinteUm.TelaJframe"/>
 <fullyQualifiedTypeName name="javax.swing.JLabel"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 <fullyQualifiedTypeName name="java.awt.Image"/>
 <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
-<fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="br.com.tecnonoticias.jogo.Confirma"/>
 <fullyQualifiedTypeName name="br.com.tecnonoticias.jogo.Confirma4"/>
 <fullyQualifiedTypeName name="br.com.tecnonoticias.jogo.Confirma3"/>
 <fullyQualifiedTypeName name="br.com.tecnonoticias.jogo.Confirma2"/>
+<fullyQualifiedTypeName name="javax.swing.JComboBox"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="br.com.tecnonoticias.estruturadedados.vinteUm.TelaJframe"/>
+<fullyQualifiedTypeName name="java.io.Closeable"/>
+<fullyQualifiedTypeName name="javax.swing.JTextField"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

@@ -18,14 +18,13 @@ public class TelaJframe extends Baralho {
 
 	private JFrame janela;
 	public static JLabel[] jlJogador = new JLabel[9];
-	private JLabel carta, carta1, jlEmbaralhar, jlRetirar;
+	private JTextField [] jtSoma = new JTextField[9];
+	private JLabel jlEmbaralhar, jlRetirar;
 	private JLabel[] cartas = new JLabel[51];
 	private JLabel[] jlNomes = new JLabel[9];
-	private JButton btEmbaralhar, btBotao, btPlay;
-	private JTextField jtEmbaralha;
+	private JButton btEmbaralhar, btBotao, btPlay, btNew;
 	public Object[] qtdJogadores = { 2, 3, 4, 5, 6, 7, 8 };
-	private int posCX = 10, posCartaRetiraX, posCartaRetiraY = 300;
-	private int posY = 10;
+	private int posCX = 10, posCartaRetiraX = 10, posCartaRetiraY = 390, posJtX = 10;
 	private Object jogadores;
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public JComboBox jcJogadores = new JComboBox(qtdJogadores);
@@ -33,6 +32,7 @@ public class TelaJframe extends Baralho {
 	protected int c = 0;
 	private String[] nomesJogadores = new String[9];
 	private int posNX;
+	private int jts = 0;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -49,7 +49,7 @@ public class TelaJframe extends Baralho {
 
 	public TelaJframe() throws MalformedURLException {
 		janela = new JFrame("Black Jack");
-		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		janela.setBounds(100, 100, 1098, 703);
 		janela.setContentPane(new JLabel(new ImageIcon(getClass().getResource("/blackjack1.png"))));
 		janela.getContentPane().setLayout(null);
@@ -59,10 +59,12 @@ public class TelaJframe extends Baralho {
 		btBotao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ee) {
 				click = true;
+				
 				if (c <= 50) {
 					while (click) {
-						String cartaRetira = nome((String) desempilhar());
-						System.out.println(cartaRetira);
+						Object cartaNaipe = desempilhar();
+						String cartaRetira = nome(cartaNaipe.toString());
+						System.out.println(cartaNaipe);
 
 						cartas[c] = new JLabel();
 						try {
@@ -70,10 +72,17 @@ public class TelaJframe extends Baralho {
 						} catch (MalformedURLException e) {
 							e.printStackTrace();
 						}
-						if (jogadores.equals("2")) {
-							cartas[c].setBounds(posCartaRetiraX += 110, posCartaRetiraY+=70, 100, 150);
+						if (posCartaRetiraX < posCX) {
+							
+							cartas[c].setBounds(posCartaRetiraX += 100, posCartaRetiraY, 100, 150);
+							jtSoma[jts].setText(String.valueOf((valor(cartaNaipe))));
+							jts++;
+//							System.out.println(posCartaRetiraX +" soma");
 						}else{
-							cartas[c].setBounds(posCartaRetiraX += 110, 300, 100, 150);
+							jts-=jts;
+							posCartaRetiraX -= posCX-10;
+//							System.out.println(posCartaRetiraX + " Subitrai" + posCX);
+							posCartaRetiraY -= 35;
 						}
 						janela.add(cartas[c]);
 						janela.repaint();
@@ -137,6 +146,12 @@ public class TelaJframe extends Baralho {
 					jlNomes[i].setBounds(posNX += 110, 570, 70, 105);
 					jlNomes[i].setVisible(false);
 					janela.add(jlNomes[i]);
+					
+					jtSoma[i] = new JTextField();
+					jtSoma[i].setBounds(posJtX += 100, 630, 30, 30);
+					jtSoma[i].setVisible(false);
+					jtSoma[i].setEditable(false);
+					janela.add(jtSoma[i]);
 
 					jlJogador[i] = new JLabel();
 					try {
@@ -150,6 +165,7 @@ public class TelaJframe extends Baralho {
 					janela.repaint();
 
 					jlNomes[i].setVisible(true);
+					jtSoma[i].setVisible(true);
 					jlJogador[i].setVisible(true);
 					System.out.println(nomesJogadores[i]);
 				}
@@ -158,5 +174,20 @@ public class TelaJframe extends Baralho {
 		});
 		btPlay.setBounds(10, 70, 70, 20);
 		janela.add(btPlay);
+		
+		btNew =  new JButton("N.Jogo");
+		btNew.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				try {
+					new TelaJframe();
+				} catch (MalformedURLException e1) {
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		btNew.setBounds(10, 140, 90, 20);
+		janela.add(btNew);
 	}
 }

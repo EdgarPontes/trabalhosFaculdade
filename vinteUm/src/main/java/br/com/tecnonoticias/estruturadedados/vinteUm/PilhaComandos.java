@@ -123,83 +123,83 @@ public class PilhaComandos {
 			p.players[f] = t.next();
 		}
 //		for (int j = 0; j < jogadores; j++) {
-			for (int i = 0; i < jogo.getBaralho().length; i++) {
-				Scanner t = new Scanner(System.in);
-				System.out.println("Qual jogador e vc?");
-				jogadorN = t.next();
-				if (p.getPlayers()[JOGADOR1].equals(jogadorN)) {
-					System.out.println(p.getPlayers()[JOGADOR1] +" quer reitar uma carta? 'S' ou 'N' ");
-					String retirarJogador1 = teclado.next();
-					if (retirarJogador1.equals("S")) {
-						String a = (String) p.desempilhar();
-						resultJogador1 += jogo.valor(a);
-						new Icones().montaTela(a,resultJogador1);
-					} 
-				}
-				if (p.getPlayers()[JOGADOR2].equals(jogadorN)) {
-					System.out.println(p.getPlayers()[JOGADOR2]+" quer reitar uma carta? 'S' ou 'N' ");
-					String retirarJogador2 = teclado.next();
-					if (retirarJogador2.equals("S")) {
-						String a = (String) p.desempilhar();
-						resultJogador2 += jogo.valor(a);
-						new Icones().montaTela(a,resultJogador2);
-					} 
-				}
-				if (p.getPlayers()[JOGADOR3].equals(jogadorN)) {
-					System.out.println(p.getPlayers()[JOGADOR3]+" quer reitar uma carta? 'S' ou 'N' ");
-					String retirarJogador3 = teclado.next();
-					if (retirarJogador3.equals("S")) {
-						String a = (String) p.desempilhar();
-						resultJogador3 += jogo.valor(a);
-						new Icones().montaTela(a,resultJogador3);
-					}
-				}
-				if (p.getPlayers()[JOGADOR4].equals(jogadorN)) {
-					System.out.println(p.getPlayers()[JOGADOR4]+" quer reitar uma carta? 'S' ou 'N' ");
-					String retirarJogador4 = teclado.next();
-					if (retirarJogador4.equals("S")) {
-						String a = (String) p.desempilhar();
-						resultJogador4 += jogo.valor(a);
-						new Icones().montaTela(a,resultJogador4);
-					}
-				}
-				if (p.getPlayers()[JOGADOR5].equals(jogadorN)) {
-					System.out.println(p.getPlayers()[JOGADOR5]+" quer reitar uma carta? 'S' ou 'N' ");
-					String retirarJogador5 = teclado.next();
-					if (retirarJogador5.equals("S")) {
-						String a = (String) p.desempilhar();
-						resultJogador5 += jogo.valor(a);
-						new Icones().montaTela(a,resultJogador5);
-					}
-				}
-				if (p.getPlayers()[JOGADOR6].equals(jogadorN)) {
-					System.out.println(p.getPlayers()[JOGADOR6]+" quer reitar uma carta? 'S' ou 'N' ");
-					String retirarJogador6 = teclado.next();
-					if (retirarJogador6.equals("S")) {
-						String a = (String) p.desempilhar();
-						resultJogador6 += jogo.valor(a);
-						new Icones().montaTela(a,resultJogador6);
-					}
-				}
-				if (p.getPlayers()[JOGADOR7].equals(jogadorN)) {
-					System.out.println(p.getPlayers()[JOGADOR7]+" quer reitar uma carta? 'S' ou 'N' ");
-					String retirarJogador7 = teclado.next();
-					if (retirarJogador7.equals("S")) {
-						String a = (String) p.desempilhar();
-						resultJogador7 += jogo.valor(a);
-						new Icones().montaTela(a,resultJogador7);
-					}
-				}
-				if (p.getPlayers()[JOGADOR8].equals(jogadorN)) {
-					System.out.println(p.getPlayers()[JOGADOR8]+" quer reitar uma carta? 'S' ou 'N' ");
-					String retirarJogador8 = teclado.next();
-					if (retirarJogador8.equals("S")) {
-						String a = (String) p.desempilhar();
-						resultJogador8 += jogo.valor(a);
-						new Icones().montaTela(a,resultJogador8);
-					}
-				}
-			}
+//			for (int i = 0; i < jogo.getBaralho().length; i++) {
+//				Scanner t = new Scanner(System.in);
+//				System.out.println("Qual jogador e vc?");
+//				jogadorN = t.next();
+//				if (p.getPlayers()[JOGADOR1].equals(jogadorN)) {
+//					System.out.println(p.getPlayers()[JOGADOR1] +" quer reitar uma carta? 'S' ou 'N' ");
+//					String retirarJogador1 = teclado.next();
+//					if (retirarJogador1.equals("S")) {
+//						String a = (String) p.desempilhar();
+//						resultJogador1 += jogo.valor(a);
+//						new Icones().montaTela(a,resultJogador1);
+//					} 
+//				}
+//				if (p.getPlayers()[JOGADOR2].equals(jogadorN)) {
+//					System.out.println(p.getPlayers()[JOGADOR2]+" quer reitar uma carta? 'S' ou 'N' ");
+//					String retirarJogador2 = teclado.next();
+//					if (retirarJogador2.equals("S")) {
+//						String a = (String) p.desempilhar();
+//						resultJogador2 += jogo.valor(a);
+//						new Icones().montaTela(a,resultJogador2);
+//					} 
+//				}
+//				if (p.getPlayers()[JOGADOR3].equals(jogadorN)) {
+//					System.out.println(p.getPlayers()[JOGADOR3]+" quer reitar uma carta? 'S' ou 'N' ");
+//					String retirarJogador3 = teclado.next();
+//					if (retirarJogador3.equals("S")) {
+//						String a = (String) p.desempilhar();
+//						resultJogador3 += jogo.valor(a);
+//						new Icones().montaTela(a,resultJogador3);
+//					}
+//				}
+//				if (p.getPlayers()[JOGADOR4].equals(jogadorN)) {
+//					System.out.println(p.getPlayers()[JOGADOR4]+" quer reitar uma carta? 'S' ou 'N' ");
+//					String retirarJogador4 = teclado.next();
+//					if (retirarJogador4.equals("S")) {
+//						String a = (String) p.desempilhar();
+//						resultJogador4 += jogo.valor(a);
+//						new Icones().montaTela(a,resultJogador4);
+//					}
+//				}
+//				if (p.getPlayers()[JOGADOR5].equals(jogadorN)) {
+//					System.out.println(p.getPlayers()[JOGADOR5]+" quer reitar uma carta? 'S' ou 'N' ");
+//					String retirarJogador5 = teclado.next();
+//					if (retirarJogador5.equals("S")) {
+//						String a = (String) p.desempilhar();
+//						resultJogador5 += jogo.valor(a);
+//						new Icones().montaTela(a,resultJogador5);
+//					}
+//				}
+//				if (p.getPlayers()[JOGADOR6].equals(jogadorN)) {
+//					System.out.println(p.getPlayers()[JOGADOR6]+" quer reitar uma carta? 'S' ou 'N' ");
+//					String retirarJogador6 = teclado.next();
+//					if (retirarJogador6.equals("S")) {
+//						String a = (String) p.desempilhar();
+//						resultJogador6 += jogo.valor(a);
+//						new Icones().montaTela(a,resultJogador6);
+//					}
+//				}
+//				if (p.getPlayers()[JOGADOR7].equals(jogadorN)) {
+//					System.out.println(p.getPlayers()[JOGADOR7]+" quer reitar uma carta? 'S' ou 'N' ");
+//					String retirarJogador7 = teclado.next();
+//					if (retirarJogador7.equals("S")) {
+//						String a = (String) p.desempilhar();
+//						resultJogador7 += jogo.valor(a);
+//						new Icones().montaTela(a,resultJogador7);
+//					}
+//				}
+//				if (p.getPlayers()[JOGADOR8].equals(jogadorN)) {
+//					System.out.println(p.getPlayers()[JOGADOR8]+" quer reitar uma carta? 'S' ou 'N' ");
+//					String retirarJogador8 = teclado.next();
+//					if (retirarJogador8.equals("S")) {
+//						String a = (String) p.desempilhar();
+//						resultJogador8 += jogo.valor(a);
+//						new Icones().montaTela(a,resultJogador8);
+//					}
+//				}
+//			}
 		}
 	}
 //}

@@ -23,111 +23,111 @@ public class Baralho extends PilhaComandos{
 		return this.baralho;
 	}
 
-	public int valor(String baralho) {
+	public Object valor(Object cartaNaipe) {
 
-		if (this.baralho[0].equals(baralho)) {
+		if (this.baralho[0].equals(cartaNaipe)) {
 			return 1;
-		} else if (this.baralho[1].equals(baralho)) {
+		} else if (this.baralho[1].equals(cartaNaipe)) {
 			return 2;
-		} else if (this.baralho[2].equals(baralho)) {
+		} else if (this.baralho[2].equals(cartaNaipe)) {
 			return 3;
-		} else if (this.baralho[3].equals(baralho)) {
+		} else if (this.baralho[3].equals(cartaNaipe)) {
 			return 4;
-		} else if (this.baralho[4].equals(baralho)) {
+		} else if (this.baralho[4].equals(cartaNaipe)) {
 			return 5;
-		} else if (this.baralho[5].equals(baralho)) {
+		} else if (this.baralho[5].equals(cartaNaipe)) {
 			return 6;
-		} else if (this.baralho[6].equals(baralho)) {
+		} else if (this.baralho[6].equals(cartaNaipe)) {
 			return 7;
-		} else if (this.baralho[7].equals(baralho)) {
+		} else if (this.baralho[7].equals(cartaNaipe)) {
 			return 8;
-		} else if (this.baralho[8].equals(baralho)) {
+		} else if (this.baralho[8].equals(cartaNaipe)) {
 			return 9;
-		} else if (this.baralho[9].equals(baralho)) {
+		} else if (this.baralho[9].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[10].equals(baralho)) {
+		} else if (this.baralho[10].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[11].equals(baralho)) {
+		} else if (this.baralho[11].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[12].equals(baralho)) {
+		} else if (this.baralho[12].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[13].equals(baralho)) {
+		} else if (this.baralho[13].equals(cartaNaipe)) {
 			return 1;
-		} else if (this.baralho[14].equals(baralho)) {
+		} else if (this.baralho[14].equals(cartaNaipe)) {
 			return 2;
-		} else if (this.baralho[15].equals(baralho)) {
+		} else if (this.baralho[15].equals(cartaNaipe)) {
 			return 3;
-		} else if (this.baralho[16].equals(baralho)) {
+		} else if (this.baralho[16].equals(cartaNaipe)) {
 			return 4;
-		} else if (this.baralho[17].equals(baralho)) {
+		} else if (this.baralho[17].equals(cartaNaipe)) {
 			return 5;
-		} else if (this.baralho[18].equals(baralho)) {
+		} else if (this.baralho[18].equals(cartaNaipe)) {
 			return 6;
-		} else if (this.baralho[19].equals(baralho)) {
+		} else if (this.baralho[19].equals(cartaNaipe)) {
 			return 7;
-		} else if (this.baralho[20].equals(baralho)) {
+		} else if (this.baralho[20].equals(cartaNaipe)) {
 			return 8;
-		} else if (this.baralho[21].equals(baralho)) {
+		} else if (this.baralho[21].equals(cartaNaipe)) {
 			return 9;
-		} else if (this.baralho[22].equals(baralho)) {
+		} else if (this.baralho[22].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[23].equals(baralho)) {
+		} else if (this.baralho[23].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[24].equals(baralho)) {
+		} else if (this.baralho[24].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[25].equals(baralho)) {
+		} else if (this.baralho[25].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[26].equals(baralho)) {
+		} else if (this.baralho[26].equals(cartaNaipe)) {
 			return 1;
-		} else if (this.baralho[27].equals(baralho)) {
+		} else if (this.baralho[27].equals(cartaNaipe)) {
 			return 2;
-		} else if (this.baralho[28].equals(baralho)) {
+		} else if (this.baralho[28].equals(cartaNaipe)) {
 			return 3;
-		} else if (this.baralho[29].equals(baralho)) {
+		} else if (this.baralho[29].equals(cartaNaipe)) {
 			return 4;
-		} else if (this.baralho[30].equals(baralho)) {
+		} else if (this.baralho[30].equals(cartaNaipe)) {
 			return 5;
-		} else if (this.baralho[31].equals(baralho)) {
+		} else if (this.baralho[31].equals(cartaNaipe)) {
 			return 6;
-		} else if (this.baralho[32].equals(baralho)) {
+		} else if (this.baralho[32].equals(cartaNaipe)) {
 			return 7;
-		} else if (this.baralho[33].equals(baralho)) {
+		} else if (this.baralho[33].equals(cartaNaipe)) {
 			return 8;
-		} else if (this.baralho[34].equals(baralho)) {
+		} else if (this.baralho[34].equals(cartaNaipe)) {
 			return 8;
-		} else if (this.baralho[35].equals(baralho)) {
+		} else if (this.baralho[35].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[36].equals(baralho)) {
+		} else if (this.baralho[36].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[37].equals(baralho)) {
+		} else if (this.baralho[37].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[38].equals(baralho)) {
+		} else if (this.baralho[38].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[39].equals(baralho)) {
+		} else if (this.baralho[39].equals(cartaNaipe)) {
 			return 1;
-		} else if (this.baralho[40].equals(baralho)) {
+		} else if (this.baralho[40].equals(cartaNaipe)) {
 			return 2;
-		} else if (this.baralho[41].equals(baralho)) {
+		} else if (this.baralho[41].equals(cartaNaipe)) {
 			return 3;
-		} else if (this.baralho[42].equals(baralho)) {
+		} else if (this.baralho[42].equals(cartaNaipe)) {
 			return 4;
-		} else if (this.baralho[43].equals(baralho)) {
+		} else if (this.baralho[43].equals(cartaNaipe)) {
 			return 5;
-		} else if (this.baralho[44].equals(baralho)) {
+		} else if (this.baralho[44].equals(cartaNaipe)) {
 			return 6;
-		} else if (this.baralho[45].equals(baralho)) {
+		} else if (this.baralho[45].equals(cartaNaipe)) {
 			return 7;
-		} else if (this.baralho[46].equals(baralho)) {
+		} else if (this.baralho[46].equals(cartaNaipe)) {
 			return 8;
-		} else if (this.baralho[47].equals(baralho)) {
+		} else if (this.baralho[47].equals(cartaNaipe)) {
 			return 9;
-		} else if (this.baralho[48].equals(baralho)) {
+		} else if (this.baralho[48].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[49].equals(baralho)) {
+		} else if (this.baralho[49].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[50].equals(baralho)) {
+		} else if (this.baralho[50].equals(cartaNaipe)) {
 			return 10;
-		} else if (this.baralho[51].equals(baralho)) {
+		} else if (this.baralho[51].equals(cartaNaipe)) {
 			return 10;
 		}
 		return 0;
