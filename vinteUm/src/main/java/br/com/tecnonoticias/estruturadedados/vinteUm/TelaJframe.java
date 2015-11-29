@@ -18,21 +18,23 @@ public class TelaJframe extends Baralho {
 
 	private JFrame janela;
 	public static JLabel[] jlJogador = new JLabel[9];
-	private JTextField [] jtSoma = new JTextField[9];
-	private JLabel jlEmbaralhar, jlRetirar;
+	private JTextField[] jtSoma = new JTextField[9];
 	private JLabel[] cartas = new JLabel[51];
 	private JLabel[] jlNomes = new JLabel[9];
 	private JButton btEmbaralhar, btBotao, btPlay, btNew;
 	public Object[] qtdJogadores = { 2, 3, 4, 5, 6, 7, 8 };
+	private int somaJogador[] = new int[9];
+	private JLabel jlEmbaralhar, jlRetirar;
 	private int posCX = 10, posCartaRetiraX = 10, posCartaRetiraY = 390, posJtX = 10;
 	private Object jogadores;
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public JComboBox jcJogadores = new JComboBox(qtdJogadores);
-	protected boolean click;
+	protected boolean click = true;
 	protected int c = 0;
 	private String[] nomesJogadores = new String[9];
 	private int posNX;
 	private int jts = 0;
+	protected int posicaoJogador;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -58,42 +60,49 @@ public class TelaJframe extends Baralho {
 		btBotao = new JButton();
 		btBotao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ee) {
-				click = true;
-				
-				if (c <= 50) {
-					while (click) {
-						Object cartaNaipe = desempilhar();
-						String cartaRetira = nome(cartaNaipe.toString());
-						System.out.println(cartaNaipe);
+//				click = true;
+				if (click) {
+					if (c <= 50) {
+//						click = true;
+						while (click) {
+							Object cartaNaipe = desempilhar();
+							int valor = (Integer) (valor(cartaNaipe));
+							String cartaRetira = nome(cartaNaipe.toString());
+							System.out.println(cartaNaipe);
+							somaJogador[posicaoJogador] += valor;
+							cartas[c] = new JLabel();
+							try {
+								cartas[c].setIcon(getImagem(cartaRetira));
+							} catch (MalformedURLException e) {
+								e.printStackTrace();
+							}
+							if (posCartaRetiraX < posCX) {
 
-						cartas[c] = new JLabel();
-						try {
-							cartas[c].setIcon(getImagem(cartaRetira));
-						} catch (MalformedURLException e) {
-							e.printStackTrace();
-						}
-						if (posCartaRetiraX < posCX) {
-							
-							cartas[c].setBounds(posCartaRetiraX += 100, posCartaRetiraY, 100, 150);
-							jtSoma[jts].setText(String.valueOf((valor(cartaNaipe))));
-							jts++;
-//							System.out.println(posCartaRetiraX +" soma");
-						}else{
-							jts-=jts;
-							posCartaRetiraX -= posCX-10;
-//							System.out.println(posCartaRetiraX + " Subitrai" + posCX);
-							posCartaRetiraY -= 35;
-						}
-						janela.add(cartas[c]);
-						janela.repaint();
+								cartas[c].setBounds(posCartaRetiraX += 100, posCartaRetiraY, 100, 150);
 
-						cartas[c].setVisible(true);
-						click = false;
-						c++;
-				
+								resultado(somaJogador[posicaoJogador]);
+								// System.out.println(posCartaRetiraX +" soma");
+							} else {
+								jts -= jts;
+								posCartaRetiraX -= posCX - 10;
+								posicaoJogador -= posicaoJogador + 1;
+								posCartaRetiraY -= 35;
+							}
+							janela.add(cartas[c]);
+							janela.repaint();
+
+							cartas[c].setVisible(true);
+							click = false;
+							c++;
+							posicaoJogador++;
+							System.out.println("Somando a posição dos jogadores " + posicaoJogador);
+
+						}
+					} else {
+						JOptionPane.showMessageDialog(null, "Acabaram as cartas");
 					}
-				} else {
-					JOptionPane.showMessageDialog(null, "Acabaram as cartas");
+				}else{
+					click = true;
 				}
 			}
 		});
@@ -146,7 +155,7 @@ public class TelaJframe extends Baralho {
 					jlNomes[i].setBounds(posNX += 110, 570, 70, 105);
 					jlNomes[i].setVisible(false);
 					janela.add(jlNomes[i]);
-					
+
 					jtSoma[i] = new JTextField();
 					jtSoma[i].setBounds(posJtX += 100, 630, 30, 30);
 					jtSoma[i].setVisible(false);
@@ -174,20 +183,32 @@ public class TelaJframe extends Baralho {
 		});
 		btPlay.setBounds(10, 70, 70, 20);
 		janela.add(btPlay);
-		
-		btNew =  new JButton("N.Jogo");
+
+		btNew = new JButton("N.Jogo");
 		btNew.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+
 				try {
 					new TelaJframe();
 				} catch (MalformedURLException e1) {
 					e1.printStackTrace();
 				}
-				
+
 			}
 		});
 		btNew.setBounds(10, 140, 90, 20);
 		janela.add(btNew);
+	}
+
+	private void resultado(int result) {
+		jtSoma[jts].setText(String.valueOf(somaJogador[posicaoJogador]));
+
+		if (result > 21) {
+			JOptionPane.showMessageDialog(null, "Jogador " + nomesJogadores[posicaoJogador] + " estourou!");
+			jlJogador[posicaoJogador].setEnabled(false);
+			jtSoma[posicaoJogador].setEnabled(false);
+			
+		}
+		jts++;
 	}
 }
