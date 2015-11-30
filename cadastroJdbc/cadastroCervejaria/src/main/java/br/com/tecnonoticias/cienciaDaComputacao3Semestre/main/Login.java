@@ -54,6 +54,7 @@ public class Login extends JFrame {
 						abilita.fornecedor.setEnabled(true);
 						abilita.usuario.setEnabled(true);
 						abilita.cCliente.setEnabled(true);
+						abilita.cFornecedor.setEnabled(true);
 						
 						dispose();
 					}else{

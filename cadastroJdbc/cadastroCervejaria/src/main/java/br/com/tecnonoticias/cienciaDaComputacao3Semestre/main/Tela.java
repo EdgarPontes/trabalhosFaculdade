@@ -116,7 +116,7 @@ public class Tela {
 		botaoCadastroConsulta.setBounds(20, 220, 200, 50);
 		botaoCadastroConsulta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new JdbcTesteBusca();
+				new BuscaCliente();
 			}
 		});
 		painelPrincipal.add(botaoCadastroConsulta);

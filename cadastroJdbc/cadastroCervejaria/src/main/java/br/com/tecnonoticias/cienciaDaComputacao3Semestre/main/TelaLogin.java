@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+@SuppressWarnings("serial")
 public class TelaLogin extends JFrame implements ActionListener{
     	
      JPanel painel;
@@ -27,7 +28,7 @@ public class TelaLogin extends JFrame implements ActionListener{
      JButton entra, cadastra ,salva ,login;
      JMenuBar barra;
      JMenu cadastro,consulta,sair;
-     JMenuItem cliente,usuario,fornecedor, cCliente, sair1;
+     JMenuItem cliente,usuario,fornecedor, cCliente, cFornecedor, sair1;
      
      Icon BotaoSalva = new ImageIcon("/media/edgar/VICTOR/WorkspaceNew/cadastroCervejaria/imagem/parceiros.png");
      Icon Botaocadastro = new ImageIcon("/media/edgar/VICTOR/WorkspaceNew/cadastroCervejaria/imagem/indice.jpeg");
@@ -40,7 +41,7 @@ public class TelaLogin extends JFrame implements ActionListener{
     	
     	setDefaultCloseOperation(EXIT_ON_CLOSE);
     	setVisible(true);
-    	setContentPane(new JLabel(new ImageIcon("/media/edgar/VICTOR/WorkspaceNew/cadastroCervejaria/imagem/fundo800x600.jpeg")));
+    	setContentPane(new JLabel(new ImageIcon(getClass().getResource("/copo-de-cerveja.jpg"))));
     	
     	barra = new JMenuBar();  	
     	cadastro = new JMenu("Cadastro");
@@ -63,8 +64,12 @@ public class TelaLogin extends JFrame implements ActionListener{
     	cCliente = new JMenuItem("Cliente");
     	cCliente.addActionListener(this);
     	cCliente.setEnabled(false);
+    	cFornecedor = new JMenuItem("Fornecedor");
+    	cFornecedor.addActionListener(this);
+    	cFornecedor.setEnabled(false);
     	consulta = new JMenu("Consulta");
     	consulta.add(cCliente);
+    	consulta.add(cFornecedor);
     	barra.add(cadastro);
     	barra.add(consulta);
     	barra.add(sair);
@@ -115,8 +120,15 @@ public class TelaLogin extends JFrame implements ActionListener{
 			Clientes cliente = new Clientes();
 			cliente.setVisible(true);
 			
+		}else if(evento.getSource() == fornecedor){
+			Fornecedor fornecedor = new Fornecedor();
+			fornecedor.setVisible(true);
+			
 		}else if(evento.getSource() == cCliente){
-			new JdbcTesteBusca();
+			new BuscaCliente();
+		
+		}else if(evento.getSource() == cFornecedor){
+			new BuscaFornecedor();
 		
 		}else if(evento.getSource() == sair1){
 					int resposta;

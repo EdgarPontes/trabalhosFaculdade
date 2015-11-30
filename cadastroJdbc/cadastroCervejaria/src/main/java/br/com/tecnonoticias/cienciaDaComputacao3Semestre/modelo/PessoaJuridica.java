@@ -1,13 +1,11 @@
 package br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo;
 
-import java.util.Date;
-
 public class PessoaJuridica extends Pessoa{
 	
+	private long fornecedorId;
 	private String razaoSocial;
 	private String nomeFantasia;
 	private String cnpj;
-	private Date fundacao;
 	
 	public String getRazaoSocial() {
 		return razaoSocial;
@@ -27,11 +25,13 @@ public class PessoaJuridica extends Pessoa{
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
-	public Date getFundacao() {
-		return fundacao;
+	
+	public long getFornecedorId() {
+		return fornecedorId;
 	}
-	public void setFundacao(Date fundacao) {
-		this.fundacao = fundacao;
+
+	public void setFornecedorId(long fornecedorId) {
+		this.fornecedorId = fornecedorId;
 	}
 
 }

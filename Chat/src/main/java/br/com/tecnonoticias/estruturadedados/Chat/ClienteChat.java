@@ -71,7 +71,7 @@ public class ClienteChat extends JFrame {
 		textoREcebido.setFont(fonte);
 		JScrollPane scroll = new JScrollPane(textoREcebido);
 		
-		Colar: textoREcebido.setLineWrap(true);
+		textoREcebido.setLineWrap(true);
 		getContentPane().add(BorderLayout.CENTER, scroll);
 		getContentPane().add(BorderLayout.SOUTH, envio);
 		configurarRede();

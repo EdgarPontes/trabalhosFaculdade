@@ -28,7 +28,7 @@ public class CadastroUsuario extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		setSize(300, 110);
-		setLocation(300, 200);
+		setLocation(250, 200);
 
 		user = new JLabel("Usuário: ");
 		add(user);
@@ -63,7 +63,7 @@ public class CadastroUsuario extends JFrame {
 						JOptionPane.showMessageDialog(null, "Usuario cadastrado!");
 					}
 					int resposta;
-					resposta = JOptionPane.showConfirmDialog(null, "Deseja sair ou cadastrar novo", "Mensagem do programa",
+					resposta = JOptionPane.showConfirmDialog(null, "Cadastrar novo", "Mensagem do programa",
 							JOptionPane.YES_NO_OPTION);
 					if (resposta == 0)
 						System.exit(0);
