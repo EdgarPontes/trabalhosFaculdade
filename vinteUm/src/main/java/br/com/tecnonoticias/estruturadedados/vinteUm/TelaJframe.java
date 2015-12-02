@@ -24,17 +24,18 @@ public class TelaJframe extends Baralho {
 	private JButton btEmbaralhar, btBotao, btPlay, btNew;
 	public Object[] qtdJogadores = { 2, 3, 4, 5, 6, 7, 8 };
 	private int somaJogador[] = new int[9];
+	private String[] nomesJogadores = new String[9];
 	private JLabel jlEmbaralhar, jlRetirar;
 	private int posCX = 10, posCartaRetiraX = 10, posCartaRetiraY = 390, posJtX = 10;
 	private Object jogadores;
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public JComboBox jcJogadores = new JComboBox(qtdJogadores);
 	protected boolean click = true;
+	
 	protected int c = 0;
-	private String[] nomesJogadores = new String[9];
 	private int posNX;
 	private int jts = 0;
-	protected int posicaoJogador;
+	private int posicaoJogador = 0;
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public JComboBox jcJogadores = new JComboBox(qtdJogadores);
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -59,51 +60,47 @@ public class TelaJframe extends Baralho {
 
 		btBotao = new JButton();
 		btBotao.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent ee) {
-//				click = true;
-				if (click) {
+				click = true;
+				
 					if (c <= 50) {
-//						click = true;
 						while (click) {
 							Object cartaNaipe = desempilhar();
 							int valor = (Integer) (valor(cartaNaipe));
 							String cartaRetira = nome(cartaNaipe.toString());
-							System.out.println(cartaNaipe);
+						
 							somaJogador[posicaoJogador] += valor;
 							cartas[c] = new JLabel();
+							
+							if (posCartaRetiraX < posCX) {
+								resultado(somaJogador[posicaoJogador]);
 							try {
 								cartas[c].setIcon(getImagem(cartaRetira));
 							} catch (MalformedURLException e) {
 								e.printStackTrace();
 							}
-							if (posCartaRetiraX < posCX) {
 
 								cartas[c].setBounds(posCartaRetiraX += 100, posCartaRetiraY, 100, 150);
-
-								resultado(somaJogador[posicaoJogador]);
-								// System.out.println(posCartaRetiraX +" soma");
+								janela.add(cartas[c]);
+								janela.repaint();
+								cartas[c].setVisible(true);
+								click = false;
+								c++;
+								System.out.println("Somando a posição dos jogadores " + posicaoJogador + " "
+										+ nomesJogadores[posicaoJogador]);
+								posicaoJogador++;
 							} else {
 								jts -= jts;
 								posCartaRetiraX -= posCX - 10;
-								posicaoJogador -= posicaoJogador + 1;
+								posicaoJogador -= posicaoJogador;
 								posCartaRetiraY -= 35;
 							}
-							janela.add(cartas[c]);
-							janela.repaint();
-
-							cartas[c].setVisible(true);
-							click = false;
-							c++;
-							posicaoJogador++;
-							System.out.println("Somando a posição dos jogadores " + posicaoJogador);
-
 						}
 					} else {
 						JOptionPane.showMessageDialog(null, "Acabaram as cartas");
 					}
-				}else{
-					click = true;
-				}
+				
 			}
 		});
 
@@ -204,11 +201,17 @@ public class TelaJframe extends Baralho {
 		jtSoma[jts].setText(String.valueOf(somaJogador[posicaoJogador]));
 
 		if (result > 21) {
+
 			JOptionPane.showMessageDialog(null, "Jogador " + nomesJogadores[posicaoJogador] + " estourou!");
 			jlJogador[posicaoJogador].setEnabled(false);
-			jtSoma[posicaoJogador].setEnabled(false);
 			
 		}
+		if (result == 21) {
+			JOptionPane.showMessageDialog(null, "Jogador " + nomesJogadores[posicaoJogador] + " Ganhou!");
+			btBotao.setEnabled(false);
+			
+		}
+
 		jts++;
 	}
 }

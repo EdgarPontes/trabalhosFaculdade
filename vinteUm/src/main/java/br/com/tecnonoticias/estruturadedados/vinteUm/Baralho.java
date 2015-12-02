@@ -243,7 +243,7 @@ public class Baralho extends PilhaComandos{
 	}
 
     public ImageIcon getImagem(String nome) throws MalformedURLException{  
-        String caminhoDaImagem = "/media/edgar/VICTOR/WorkspaceNew/vinteUm/baralho/" + nome ;  
+        String caminhoDaImagem = "/media/edgar/309A4BF49A4BB4DE/Git/faculdade/trabalhosFaculdade/vinteUm/src/main/java/br/com/tecnonoticias/estruturadedados/imagens/baralho/" + nome ;  
         Image img = Toolkit.getDefaultToolkit().getImage(caminhoDaImagem);
 		Image menor = img.getScaledInstance(80, 100, Image.SCALE_DEFAULT);
 		ImageIcon icone = new ImageIcon(menor);  
