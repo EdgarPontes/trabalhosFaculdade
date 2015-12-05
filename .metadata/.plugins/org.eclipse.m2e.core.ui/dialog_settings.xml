@@ -41,6 +41,9 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/media/edgar/309A4BF49A4BB4DE/Git/faculdade/trabalhosFaculdade/locadora-veiculo-web"/>
+			<item value="/media/edgar/309A4BF49A4BB4DE/Git/faculdade/trabalhosFaculdade/persistencia-java-master"/>
+			<item value="/media/edgar/309A4BF49A4BB4DE/Git/faculdade/trabalhosFaculdade/sistema-venda-maven"/>
 			<item value="/media/edgar/309A4BF49A4BB4DE/Git/faculdade/trabalhosFaculdade/cadastroCervejaria"/>
 			<item value="/media/edgar/309A4BF49A4BB4DE/Git/faculdade/trabalhosFaculdade/vinteUm"/>
 			<item value="/media/edgar/Novo volume/faculdade/chat/BatePapoFaculdade"/>
