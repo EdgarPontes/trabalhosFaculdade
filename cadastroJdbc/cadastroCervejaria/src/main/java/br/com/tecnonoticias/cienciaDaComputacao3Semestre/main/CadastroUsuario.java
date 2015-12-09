@@ -25,7 +25,7 @@ public class CadastroUsuario extends JFrame {
 
 		super("Cadastro Login Cervejaria Alvorada");
 		setLayout(new FlowLayout());
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setVisible(true);
 		setSize(300, 110);
 		setLocation(250, 200);

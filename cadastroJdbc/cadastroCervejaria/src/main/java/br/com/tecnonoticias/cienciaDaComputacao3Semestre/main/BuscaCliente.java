@@ -78,7 +78,7 @@ public class BuscaCliente extends JFrame {
 	private static void mostraJanea() {
 		janela.pack();
 		janela.setSize(530, 490);
-		janela.setResizable(false);
+//		janela.setResizable(false);
 		janela.setVisible(true);
 
 	}

@@ -157,11 +157,8 @@ public class ClienteSocket extends javax.swing.JFrame {
 
 				arquivo = new Arquivo();
 				arquivo.setConteudo(bFile);
-				arquivo.setDataHoraUpload(new Date());
 				arquivo.setNome(fileSelected.getName());
 				arquivo.setTamanhoKB(kbSize);
-				arquivo.setIpDestino(jTextFieldIP.getText());
-				arquivo.setPortaDestino(jTextFieldPorta.getText());
 				arquivo.setDiretorioDestino(jTextFieldDiretorio.getText().trim());
 			}
 

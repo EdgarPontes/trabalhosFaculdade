@@ -5,13 +5,17 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Locale;
 import java.util.Scanner;
 
+import javax.swing.AbstractButton;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -31,6 +35,7 @@ public class ClienteChat extends JFrame {
 	JTextArea textoREcebido;
 	Scanner leitor;
 	JButton botao;
+	JButton jButtonArquivo;
 
 	private class EscutaServidor implements Runnable {
 
@@ -60,17 +65,44 @@ public class ClienteChat extends JFrame {
 
 		JButton botao = new JButton("Enviar");
 		botao.setFont(fonte);
-		botao.addActionListener((ActionListener) new EnviarListener());  
+		botao.addActionListener((ActionListener) new EnviarListener());
+
+		final JButton jButtonArquivo = new JButton("Selecionar Arquivo");
+		jButtonArquivo.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				FileInputStream fis;
+				try {
+
+					JFileChooser chooser = new JFileChooser();
+					chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+					chooser.setDialogTitle("Escolha o arquivo");
+
+					if (chooser.showOpenDialog(jButtonArquivo) == JFileChooser.OPEN_DIALOG) {
+						File fileSelected = chooser.getSelectedFile();
+
+						byte[] bFile = new byte[(int) fileSelected.length()];
+						fis = new FileInputStream(fileSelected);
+						fis.read(bFile);
+						fis.close();
+					}
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+
+		});
 
 		Container envio = new JPanel();
 		envio.setLayout(new BorderLayout());
 		envio.add(BorderLayout.CENTER, textoParaEnviar);
 		envio.add(BorderLayout.EAST, botao);
+		envio.add(BorderLayout.SOUTH, jButtonArquivo);
 
 		textoREcebido = new JTextArea();
 		textoREcebido.setFont(fonte);
 		JScrollPane scroll = new JScrollPane(textoREcebido);
-		
+
 		textoREcebido.setLineWrap(true);
 		getContentPane().add(BorderLayout.CENTER, scroll);
 		getContentPane().add(BorderLayout.SOUTH, envio);
@@ -84,19 +116,19 @@ public class ClienteChat extends JFrame {
 	private class EnviarListener implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
-			
+
 			escritor.println(nome + " : " + textoParaEnviar.getText());
 			escritor.flush();
 			textoParaEnviar.setText(" ");
 			textoParaEnviar.requestFocus();
-//			System.out.println(socket.getRemoteSocketAddress());
+			// System.out.println(socket.getRemoteSocketAddress());
 		}
 
 	}
 
 	private void configurarRede() {
 		try {
-			socket = new Socket("192.168.0.102", 5000);
+			socket = new Socket("127.0.0.1", 5000);
 			escritor = new PrintWriter(socket.getOutputStream());
 			leitor = new Scanner(socket.getInputStream());
 			new Thread(new EscutaServidor()).start();
@@ -109,7 +141,7 @@ public class ClienteChat extends JFrame {
 	public static void main(String[] args) {
 		Locale.setDefault(new Locale("pt", "BR"));
 		new ClienteChat("Edgar");
-//		new ClienteChat("Nicolas");
+		 new ClienteChat("Nicolas");
 
 	}
 

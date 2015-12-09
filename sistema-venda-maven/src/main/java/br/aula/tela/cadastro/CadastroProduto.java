@@ -106,4 +106,15 @@ public class CadastroProduto extends MenuPrincipal {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+	@Override
+	public void limpaCampo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void habilitaCampos(boolean isEnable) {
+		// TODO Auto-generated method stub
+		
+	}
 }

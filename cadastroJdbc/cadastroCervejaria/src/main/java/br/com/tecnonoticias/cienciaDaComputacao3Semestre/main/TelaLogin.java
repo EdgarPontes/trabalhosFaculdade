@@ -14,6 +14,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+import com.birosoft.liquid.LiquidLookAndFeel;
 
 @SuppressWarnings("serial")
 public class TelaLogin extends JFrame implements ActionListener{
@@ -29,11 +33,6 @@ public class TelaLogin extends JFrame implements ActionListener{
      JMenuBar barra;
      JMenu cadastro,consulta,sair;
      JMenuItem cliente,usuario,fornecedor, cCliente, cFornecedor, sair1;
-     
-     Icon BotaoSalva = new ImageIcon("/media/edgar/VICTOR/WorkspaceNew/cadastroCervejaria/imagem/parceiros.png");
-     Icon Botaocadastro = new ImageIcon("/media/edgar/VICTOR/WorkspaceNew/cadastroCervejaria/imagem/indice.jpeg");
-     Icon barril = new ImageIcon("/media/edgar/VICTOR/WorkspaceNew/cadastroCervejaria/imagem/barril.jpg");
-     Icon text = new ImageIcon("/media/edgar/VICTOR/WorkspaceNew/cadastroCervejaria/imagem/chamda.jpeg");
      
      JLabel fundo;
      
@@ -75,17 +74,10 @@ public class TelaLogin extends JFrame implements ActionListener{
     	barra.add(sair);
     	setJMenuBar(barra);
     	
-    	fundo = new JLabel(text);
-    	fundo.setSize(300,200);
-    	
     	entra = new JButton("Entrar");
     	entra.setBounds(10, 110, 83, 50);
     	entra.addActionListener(this);
-    	
-//    	JLabel bar = new JLabel(barril);
-//    	bar.setBounds(0, 215, 400, 400);
-    	
-//    	add(bar);
+
     	add(entra);
     	
     	setSize(800, 600);
@@ -93,11 +85,12 @@ public class TelaLogin extends JFrame implements ActionListener{
      }
      
      public static void main(String[] args) {
-    	try {
- 			javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
- 			} catch (Exception ex) {
- 			ex.printStackTrace();
- 			}
+//    	try {
+// 			javax.swing.UIManager.setLookAndFeel("com.jtattoo.plaf.aero.AeroLookAndFeel");
+// 			} catch (Exception ex) {
+// 			ex.printStackTrace();
+// 			}
+//    	 lookandfeel();
 		new TelaLogin();
 	}
 
@@ -139,5 +132,28 @@ public class TelaLogin extends JFrame implements ActionListener{
 		}
 		
 		
+	}
+	public static void lookandfeel() {
+		try {
+			/**
+			 * "com.birosoft.liquid.LiquidLookAndFeel" tema mac
+			 * "com.jtattoo.plaf.aero.AeroLookAndFeel" tema aero
+			 * "com.jtattoo.plaf.hifi.HiFiLookAndFeel" black
+			 * "com.jtattoo.plaf.acryl.AcrylLookAndFeel" tema acryl
+			 * "com.jtattoo.plaf.mcwin.McWinLookAndFeel" tema mcWin
+			 * "com.jtattoo.plaf.smart.SmartLookAndFeel" tema smart
+			 */
+			UIManager.setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
+			LiquidLookAndFeel.setLiquidDecorations(true, "mac");
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (UnsupportedLookAndFeelException e) {
+			e.printStackTrace();
+		}
 	}
 }

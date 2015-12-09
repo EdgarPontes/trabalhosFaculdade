@@ -86,7 +86,7 @@ public class AlteraCliente extends JFrame {
 
 		getContentPane().add(tf_Nome);
 		getContentPane().add(tf_Codigo);
-		getContentPane().add(tf_Nascimento);
+//		getContentPane().add(tf_Nascimento);
 		getContentPane().add(tf_Endereco);
 		getContentPane().add(tf_Cpf);
 		getContentPane().add(tf_Rg);
@@ -96,7 +96,7 @@ public class AlteraCliente extends JFrame {
 
 		getContentPane().add(lb_Nome);
 		getContentPane().add(lb_Codigo);
-		getContentPane().add(lb_Nascimento);
+//		getContentPane().add(lb_Nascimento);
 		getContentPane().add(lb_Endereco);
 		getContentPane().add(lb_Cpf);
 		getContentPane().add(lb_Rg);

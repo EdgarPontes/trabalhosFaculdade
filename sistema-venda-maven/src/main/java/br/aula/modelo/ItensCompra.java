@@ -1,5 +1,7 @@
 package br.aula.modelo;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +13,7 @@ import javax.persistence.ManyToOne;
  * @author Fernando
  */
 @Entity
-public class ItensCompra {
+public class ItensCompra implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

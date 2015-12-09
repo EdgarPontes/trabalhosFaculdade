@@ -7,12 +7,6 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/**
- * @author Lucas iorio - http://www.byiorio.com
- *
- * @author Lucas iorio - http://www.byiorio.com
- *
- */
 public class ServerTransfer {
 	public static void main(String[] args) {
 

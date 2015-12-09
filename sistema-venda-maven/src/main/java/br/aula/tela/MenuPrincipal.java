@@ -1,6 +1,6 @@
 package br.aula.tela;
 
-public class MenuPrincipal extends AbstractMenu {
+public abstract class MenuPrincipal extends AbstractMenu {
 
     public MenuPrincipal() {
         initComponents();

@@ -1,5 +1,6 @@
 package br.aula.modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,7 +17,7 @@ import javax.persistence.OneToMany;
  * @author Fernando
  */
 @Entity
-public class Compra {
+public class Compra implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
