@@ -27,6 +27,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/media/edgar/Novo volume/faculdade/trabalhosFaculdade/vinteUm"/>
 			<item value="/media/edgar/VICTOR/WorkspaceNew/EstruturaDeDados/src"/>
 			<item value="/media/edgar/VICTOR/WorkspaceNew/cadastroJdbc/cadastroCervejaria/src/main/java/br/com/tecnonoticias/cienciaDaComputacao3Semestre/main/Login.java"/>
 			<item value="/media/edgar/VICTOR/WorkspaceNew/locadora-veiculo-web"/>
@@ -52,6 +53,8 @@
 			<item value="br.com.tecnonoticias.estruturadedados"/>
 		</list>
 		<list key="package">
+			<item value="br.com.tecnonoticias.estruturadedados.bubbleSort"/>
+			<item value="br.com.tecnonoticias.estruturadedados.tabela"/>
 			<item value="br.com.tecnonoticias.estruturadedados.TrabalhoEstruturaDeDados"/>
 			<item value="br.com.tecnonoticias.estruturadedados.Chat"/>
 			<item value="br.com.tecnonoticias.estruturadedados.vinteUm"/>
@@ -59,6 +62,8 @@
 			<item value="br.com.tecnonoticias.estruturadedados.pilha"/>
 		</list>
 		<list key="artifactId">
+			<item value="bubbleSort"/>
+			<item value="tabela"/>
 			<item value="TrabalhoEstruturaDeDados"/>
 			<item value="Chat"/>
 			<item value="vinteUm"/>

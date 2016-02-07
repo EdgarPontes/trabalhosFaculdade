@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="174" key="DIALOG_Y_ORIGIN"/>
+		<item value="338" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
 	<section name="ExternalProjectImportWizard">
-		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
-		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
 			<item value="/media/edgar/309A4BF49A4BB4DE/Git/faculdade/trabalhosFaculdade/EstruturaDeDados"/>
 			<item value="/media/edgar/Novo volume/faculdade/Swing"/>
@@ -14,18 +22,10 @@
 			<item value=""/>
 		</list>
 	</section>
-	<section name="WORKBENCH_SETTINGS">
-		<list key="ENABLED_TRANSFERS">
-		</list>
-	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.m2e.core.wizards.Maven2ProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.m2e"/>
 		</list>
-	</section>
-	<section name="ChooseWorkspaceDialogSettings">
-		<item value="174" key="DIALOG_Y_ORIGIN"/>
-		<item value="338" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>
