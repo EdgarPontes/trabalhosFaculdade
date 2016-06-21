@@ -1,7 +1,0 @@
-INDEX VERSION 1.3+/media/edgar/309A4BF49A4BB4DE/Git/faculdade/trabalhosFaculdade/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-3800556818.index
-3746254773.index
-3692405613.index
-4293087215.index
-1781171358.index
-778895580.index

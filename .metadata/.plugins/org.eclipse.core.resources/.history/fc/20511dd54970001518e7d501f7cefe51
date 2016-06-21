@@ -1,7 +1,0 @@
-package br.com.tecnonoticias.exemplo;
-
-import org.xml.sax.helpers.DefaultHandler;
-
-public class NegociacaoHandler extends DefaultHandler{
-
-}

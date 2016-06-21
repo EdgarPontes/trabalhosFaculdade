@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename field &apos;senha&apos; in &apos;br.com.tecnonoticias.estruturadedados.CaixaAtendimento&apos; to &apos;senhaP&apos;&#x0A;- Original project: &apos;EstruturaDeDados&apos;&#x0A;- Original element: &apos;br.com.tecnonoticias.estruturadedados.CaixaAtendimento.senha&apos;&#x0A;- Renamed element: &apos;br.com.tecnonoticias.estruturadedados.CaixaAtendimento.senhaP&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;senha&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;br.com.tecnonoticias.estruturadedados{CaixaAtendimento.java[CaixaAtendimento^senha" name="senhaP" references="true" setter="false" stamp="1442978928624" textual="false" version="1.0"/>
-</session>

@@ -1,5 +1,0 @@
-package br.com.tecnonoticias.cienciaDaComputacao3Semestre.modelo;
-
-public class PessoaFisica extends Pessoa{
-
-}
