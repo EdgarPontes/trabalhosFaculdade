@@ -1,8 +1,10 @@
 package br.com.meuprimeiroprojeto.tablemodel;
 
-import br.com.meuprimeiroprojeto.modelo.Estado;
 import java.util.List;
+
 import javax.swing.table.AbstractTableModel;
+
+import br.com.meuprimeiroprojeto.modelo.Estado;
 
 /**
  *
@@ -24,7 +26,6 @@ public class TableModelEstado extends AbstractTableModel {
         this.lista = lista;
     }
 
-    @Override
     public int getRowCount() {
         if (getLista() == null) {
             return 0;
@@ -32,7 +33,6 @@ public class TableModelEstado extends AbstractTableModel {
         return getLista().size();
     }
 
-    @Override
     public int getColumnCount() {
         return 1;
     }
@@ -43,7 +43,6 @@ public class TableModelEstado extends AbstractTableModel {
         return coluna[column];
     }
 
-    @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         Estado obj = (Estado) getLista().get(rowIndex);
         switch (columnIndex) {

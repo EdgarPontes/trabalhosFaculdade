@@ -1,6 +1,5 @@
 package br.com.meuprimeiroprojeto.dao;
 
-import br.com.meuprimeiroprojeto.util.HibernateUtility;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
@@ -9,10 +8,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.LockOptions;
 import org.hibernate.criterion.Restrictions;
+
+import br.com.meuprimeiroprojeto.util.HibernateUtility;
 
 public class DaoGenericoImpl<T, ID extends Serializable> implements DaoGenerico<T, ID> {
 
@@ -22,12 +24,10 @@ public class DaoGenericoImpl<T, ID extends Serializable> implements DaoGenerico<
         this.oClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
     }
 
-    @Override
     public Class<T> getObjectClass() {
         return this.oClass;
     }
 
-    @Override
     public T save(T objeto) {
         try {
             Object obj = null;
@@ -42,7 +42,6 @@ public class DaoGenericoImpl<T, ID extends Serializable> implements DaoGenerico<
         }
     }
 
-    @Override
     public void delete(T objeto) {
         try {
             HibernateUtility.beginTransaction();
@@ -57,7 +56,6 @@ public class DaoGenericoImpl<T, ID extends Serializable> implements DaoGenerico<
         }
     }
 
-    @Override
     public void deleteItem(T objeto) {
         try {
             HibernateUtility.beginTransaction();
@@ -68,7 +66,6 @@ public class DaoGenericoImpl<T, ID extends Serializable> implements DaoGenerico<
         }
     }
 
-    @Override
     public List<T> list() {
         try {
             List list = HibernateUtility.getSession().createCriteria(oClass).list();
@@ -80,7 +77,6 @@ public class DaoGenericoImpl<T, ID extends Serializable> implements DaoGenerico<
         }
     }
 
-    @Override
     public T getById(Serializable id) {
         try {
             return (T) HibernateUtility.getSession().get(oClass, id);
@@ -90,7 +86,6 @@ public class DaoGenericoImpl<T, ID extends Serializable> implements DaoGenerico<
         }
     }
 
-    @Override
     public T getById(Serializable id, boolean lock) {
         try {
             if (lock) {
@@ -104,7 +99,6 @@ public class DaoGenericoImpl<T, ID extends Serializable> implements DaoGenerico<
         }
     }
 
-    @Override
     public List<T> listCriterio(String subClazz, Map<String, Object> filtrosConsulta, int tipoConsulta) {
         List<T> lista = new ArrayList<T>();
         Set entradas = filtrosConsulta.entrySet();
@@ -165,12 +159,10 @@ public class DaoGenericoImpl<T, ID extends Serializable> implements DaoGenerico<
         }
     }
 
-    @Override
     public List<T> consultaHQL(String consulta) {
         return (List<T>) HibernateUtility.getSession().createQuery(consulta).list();
     }
 
-    @Override
     public void cancel() {
         HibernateUtility.rollbackTransaction();
         HibernateUtility.closeSession();
